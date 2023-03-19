@@ -4,7 +4,9 @@
 // 範例："AAABBBDDDAABBBCC" -> ['A', 'B', 'D', 'A', 'B', 'C']
 
 function uniqueOrder(sequence) {
-    // 實作寫在這裡
+    return [...sequence].filter((el, idx) => {
+        return (idx !== 0 && el !== sequence[idx - 1]) || (idx === 0);
+    });
 }
 
 console.log(uniqueOrder("AABCC")) // [ 'A', 'B', 'C']
